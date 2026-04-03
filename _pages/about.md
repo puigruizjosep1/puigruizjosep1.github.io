@@ -2,18 +2,19 @@
 layout: about
 title: about
 permalink: /
-subtitle: Data Science Leader | Machine Learning | Fintech
+subtitle: Data Science | Machine Learning | Fintech
 
 profile:
   align: right
   image: prof_pic.jpg
   image_circular: false # crops the image to make it circular
   more_info: >
-    <p>Data Science & Machine Learning</p>
-    <p>Fintech Innovation</p>
+    Josep Puig Ruiz<br/>
+    Boston, MA<br/>
+    Data Science Research
 
-selected_papers: true # includes a list of papers marked as "selected={true}"
-social: true # includes social icons at the bottom of the page
+selected_papers: false # includes a list of papers marked as "selected={true}"
+social: false # includes social icons at the bottom of the page
 
 announcements:
   enabled: true # includes a list of news items
