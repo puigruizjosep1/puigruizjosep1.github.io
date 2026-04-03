@@ -2,7 +2,7 @@
 layout: about
 title: about
 permalink: /
-subtitle: Data Science Leader
+subtitle: Data Science Leader | Machine Learning | Fintech
 
 profile:
   align: right
@@ -26,6 +26,8 @@ latest_posts:
   limit: 3 # leave blank to include all the blog posts
 ---
 
-Data Science leader passionate about machine learning and fintech innovation.
+<!-- Data Science leader passionate about machine learning and fintech innovation.
 
-I specialize in leveraging data-driven insights to solve complex problems and drive business impact. My work focuses on building scalable machine learning solutions and advancing innovation in the financial technology sector.
+I specialize in leveraging data-driven insights to solve complex problems and drive business impact. My work focuses on building scalable machine learning solutions and advancing innovation in the financial technology sector. -->
+
+Website currently under construction. Come back in the future!
