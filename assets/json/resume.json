@@ -34,9 +34,7 @@
       "startDate": "2026-01-01",
       "endDate": "Ongoing",
       "summary": "Main instructor for **graduate-level special topics** focusing on the intersection of Data Science, Machine Learning, and Financial Markets.",
-      "highlights": [
-        "**TML-0193-08**: Special Topics: Data & Machine Learning for Financial Markets"
-      ]
+      "highlights": ["**TML-0193-08**: Special Topics: Data & Machine Learning for Financial Markets"]
     },
     {
       "name": "Johns Hopkins University, Center for Leadership Education",
@@ -84,9 +82,7 @@
       "startDate": "2019-05-01",
       "endDate": "2019-08-01",
       "summary": "Performed competitive and market intelligence research analysis by effectively using source intelligence (OSINT) and Machine Learning techniques to provide insights, direction and coaching on how to position most effectively.",
-      "highlights": [
-        "Provided market and competitive actionable intelligence-based deliverables to support the company’s AI strategy."
-      ]
+      "highlights": ["Provided market and competitive actionable intelligence-based deliverables to support the company’s AI strategy."]
     },
     {
       "name": "French Space Agency (CNES)",
@@ -111,25 +107,13 @@
       "name": "Data Science & Machine Learning",
       "level": "Expert",
       "icon": "fa-solid fa-hashtag",
-      "keywords": [
-        "Machine Learning",
-        "Deep Learning",
-        "Statistical Modeling",
-        "Python",
-        "Data Analysis",
-        "MLOps"
-      ]
+      "keywords": ["Machine Learning", "Deep Learning", "Statistical Modeling", "Python", "Data Analysis", "MLOps"]
     },
     {
       "name": "Financial Technology",
       "level": "Expert",
       "icon": "fa-solid fa-chart-line",
-      "keywords": [
-        "Fintech",
-        "Quantitative Analysis",
-        "Market Intelligence",
-        "Risk Analytics"
-      ]
+      "keywords": ["Fintech", "Quantitative Analysis", "Market Intelligence", "Risk Analytics"]
     }
   ],
   "languages": [],
