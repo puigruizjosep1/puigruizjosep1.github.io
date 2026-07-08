@@ -66,9 +66,14 @@ layout: default
 
       <section class="company-card">
         <header class="company-head">
-          <div>
-            <h3 class="company-name">{{ company }}</h3>
-            <p class="company-location">{{ first_role.location }}</p>
+          <div class="company-identity">
+            {% if first_role.logo %}
+              <span class="org-logo"><img src="{{ first_role.logo | relative_url }}" alt="{{ company }} logo" loading="lazy"></span>
+            {% endif %}
+            <div>
+              <h3 class="company-name">{{ company }}</h3>
+              <p class="company-location">{{ first_role.location }}</p>
+            </div>
           </div>
           <div class="company-tenure">
             <span class="company-dates">{{ group_start | date: '%Y' }} – {{ group_end_label }}</span>
@@ -121,6 +126,9 @@ layout: default
       <div class="parallel-grid">
         {% for job in side_work %}
           <section class="parallel-card">
+            {% if job.logo %}
+              <span class="org-logo parallel-logo"><img src="{{ job.logo | relative_url }}" alt="{{ job.name }} logo" loading="lazy"></span>
+            {% endif %}
             <header class="parallel-head">
               <h3 class="parallel-position">{{ job.position }}</h3>
               {% if job.endDate == 'Ongoing' or job.endDate == null or job.endDate == '' %}

@@ -25,7 +25,8 @@
         "Directly responsible for **$20M+ in annual recurring revenue (ARR)** through data science-driven product deployments",
         "Leading technical discovery and ROI-driven presentations for high-value sales opportunities as an **executive partner**",
         "Architecting **first-of-their-kind AI systems** for global market infrastructure"
-      ]
+      ],
+      "logo": "assets/img/logos/nasdaq.png"
     },
     {
       "name": "Tufts University",
@@ -35,7 +36,8 @@
       "endDate": "Ongoing",
       "summary": "Main instructor for **graduate-level special topics** focusing on the intersection of Data Science, Machine Learning, and Financial Markets.",
       "highlights": ["**TML-0193-08**: Special Topics: Data & Machine Learning for Financial Markets"],
-      "parallel": true
+      "parallel": true,
+      "logo": "assets/img/logos/tufts.png"
     },
     {
       "name": "Johns Hopkins University, Center for Leadership Education",
@@ -48,7 +50,8 @@
         "Advising on **curriculum evolution and research initiatives** to meet rapid industry advancements",
         "Orchestrating collaborative strategies between **JHU and industrial partners** to enhance student career development"
       ],
-      "parallel": true
+      "parallel": true,
+      "logo": "assets/img/logos/jhu.png"
     },
     {
       "name": "The NASDAQ Stock Exchange",
@@ -61,7 +64,8 @@
         "Led R&D for the **world's first SEC-approved AI-powered order type** using deep reinforcement learning. See: [White Paper](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4243985); [News Coverage](https://www.reuters.com/technology/nasdaq-gets-sec-nod-first-exchange-ai-driven-order-type-2023-09-08/); [Rollout](https://www.marketsmedia.com/nasdaq-finalizes-rollout-of-ai-order-type/)",
         "Managed a **global team of 10+ Data Scientists**, ensuring rigorous methodology in model selection and experimentation",
         "Deployed **low-latency data science solutions** integrated directly into US and global market infrastructure"
-      ]
+      ],
+      "logo": "assets/img/logos/nasdaq.png"
     },
     {
       "name": "The NASDAQ Stock Exchange",
@@ -75,7 +79,8 @@
         "Executed quarterly rebalancing of AI-driven thematic indices representing **over $4B in Assets Under Management (AUM)**",
         "Owned **complete ML lifecycle** from academic literature review and prototyping to production monitoring",
         "Developed and implemented diverse predictive and classification models for **global production systems**"
-      ]
+      ],
+      "logo": "assets/img/logos/nasdaq.png"
     },
     {
       "name": "Dassault Systèmes",
