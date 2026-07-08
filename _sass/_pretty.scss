@@ -1,0 +1,315 @@
+/*******************************************************************************
+ * Styles for chip navigation, section titles, and the teaching/service/
+ * engagements pages.
+ ******************************************************************************/
+
+.pretty-jump {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 0.85rem;
+}
+
+.pretty-chip {
+  display: inline-block;
+  padding: 0.28rem 0.62rem;
+  border-radius: 999px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--global-theme-color);
+  border: 1px solid color-mix(in srgb, var(--global-theme-color) 32%, transparent);
+  background-color: color-mix(in srgb, var(--global-theme-color) 10%, transparent);
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: none;
+    border-color: var(--global-theme-color);
+  }
+}
+
+.page-section-title {
+  margin-top: 1.7rem;
+  margin-bottom: 0.7rem;
+  padding-bottom: 0.35rem;
+  border-bottom: 1px solid var(--global-divider-color);
+}
+
+.page-engagements {
+  // The chip row IS the subtitle — hide the redundant prose description
+  .post-header.page-hero .post-description {
+    display: none;
+  }
+
+  // Let the chip row finish the title band — drop the hero's divider
+  .post-header.page-hero {
+    border-bottom: none;
+    margin-bottom: 0.85rem;
+    padding-bottom: 0;
+  }
+
+  .page-section-title {
+    margin-top: 1.55rem;
+    margin-bottom: 0.65rem;
+    padding-bottom: 0.3rem;
+    font-size: 1.08rem;
+    font-weight: 700;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    border-bottom: 1px solid var(--global-divider-color);
+  }
+
+  .pretty-jump {
+    align-items: center;
+    gap: 0.45rem 0.55rem;
+    margin: 0 0 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid var(--global-divider-color);
+  }
+
+  // First section title after the jump nav — let the nav do the heavy lifting
+  .pretty-jump + .page-section-title {
+    margin-top: 0;
+  }
+
+  h3 {
+    margin: 1rem 0 0.45rem;
+    font-size: 0.72rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.09em;
+    color: var(--global-theme-color);
+    display: inline-block;
+    padding: 0.2rem 0.58rem;
+    border-radius: 999px;
+    background-color: color-mix(in srgb, var(--global-theme-color) 10%, transparent);
+    border: 1px solid color-mix(in srgb, var(--global-theme-color) 30%, transparent);
+  }
+
+  h3 + ul,
+  .page-section-title + ul {
+    margin: 0 0 0.9rem;
+    padding: 1.1rem 1.3rem 0.7rem 1.65rem;
+    border: 1px solid var(--global-divider-color);
+    border-radius: 0.75rem;
+    background-color: var(--global-card-bg-color);
+    box-shadow: 0 1px 0 rgba(0, 0, 0, 0.03);
+  }
+
+  h3 + ul li,
+  .page-section-title + ul li {
+    margin-bottom: 0.5rem;
+    line-height: 1.45;
+    font-size: 0.94rem;
+  }
+}
+
+.page-teaching {
+  h2 {
+    margin-top: 1.4rem;
+    margin-bottom: 0.6rem;
+    font-size: 1.1rem;
+    font-weight: 700;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+  }
+
+  h4 {
+    margin-top: 1rem;
+    margin-bottom: 0.45rem;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--global-theme-color);
+  }
+
+  // Wrap table for horizontal scroll on narrow viewports
+  article {
+    overflow-x: auto;
+  }
+
+  .syllabus-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.8rem;
+    line-height: 1.5;
+
+    // Booktabs-style: thick top and bottom rules only
+    border-top: 2px solid var(--global-text-color);
+    border-bottom: 2px solid var(--global-text-color);
+
+    th,
+    td {
+      border: none;
+      padding: 0.5rem 0.8rem;
+      vertical-align: top;
+
+      &:first-child {
+        padding-left: 0;
+      }
+
+      &:last-child {
+        padding-right: 0;
+      }
+    }
+
+    thead th {
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--global-text-color-light);
+      padding-bottom: 0.6rem;
+      border-bottom: 1px solid var(--global-text-color);
+    }
+
+    tbody tr {
+      border-bottom: 1px solid var(--global-divider-color);
+
+      &:last-child {
+        border-bottom: none;
+      }
+
+      &:hover td {
+        background-color: color-mix(in srgb, var(--global-text-color) 4%, transparent);
+      }
+    }
+
+    // Date column: fixed width, no wrap, tabular numbers
+    td:first-child,
+    th:first-child {
+      white-space: nowrap;
+      font-variant-numeric: tabular-nums;
+      width: 7rem;
+    }
+
+    // Date column: mute so it recedes behind the topic
+    td:first-child {
+      color: var(--global-text-color-light);
+
+      strong {
+        font-weight: 600;
+        color: var(--global-text-color-light);
+      }
+    }
+
+    // Topic column: primary content — consistent weight whether linked or not
+    td:nth-child(2) {
+      font-weight: 500;
+
+      a {
+        color: var(--global-text-color);
+        font-weight: 600;
+        text-decoration: none;
+
+        &:hover {
+          color: var(--global-theme-color);
+        }
+      }
+    }
+
+    // Readings column: clearly secondary — one step smaller than table base
+    td:nth-child(3) {
+      font-size: 0.75rem;
+      line-height: 1.6;
+      color: var(--global-text-color-light);
+
+      a {
+        color: var(--global-theme-color);
+        text-decoration: none;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+
+    // Homework/materials column: pill badges — action items distinct from reading links
+    td:last-child {
+      white-space: nowrap;
+
+      a {
+        display: inline-block;
+        font-size: 0.72rem;
+        font-weight: 600;
+        letter-spacing: 0.01em;
+        color: var(--global-theme-color);
+        background-color: color-mix(in srgb, var(--global-theme-color) 8%, transparent);
+        border: 1px solid color-mix(in srgb, var(--global-theme-color) 30%, transparent);
+        border-radius: 999px;
+        padding: 0.15rem 0.55rem;
+        text-decoration: none;
+
+        &:hover {
+          border-color: var(--global-theme-color);
+          text-decoration: none;
+        }
+      }
+    }
+  }
+}
+
+.teaching-note-card {
+  margin: 0 0 1.2rem;
+  padding: 0;
+  border: none;
+  background: none;
+  font-style: italic;
+  font-size: 0.95rem;
+  line-height: 1.65;
+  color: var(--global-text-color-light);
+}
+
+.teaching-meta-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0;
+  margin-bottom: 1.4rem;
+  border-top: 1px solid var(--global-divider-color);
+  border-bottom: 1px solid var(--global-divider-color);
+  padding: 0.65rem 0;
+}
+
+.teaching-meta-card {
+  border: none;
+  border-right: 1px solid var(--global-divider-color);
+  border-radius: 0;
+  padding: 0 1.25rem 0 0;
+  margin-right: 1.25rem;
+  background: none;
+
+  &:last-child {
+    border-right: none;
+    margin-right: 0;
+    padding-right: 0;
+  }
+
+  .meta-label {
+    margin: 0;
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 0.07em;
+    color: var(--global-text-color-light);
+  }
+
+  .meta-value {
+    margin: 0.15rem 0 0;
+    font-size: 0.875rem;
+    font-weight: 600;
+  }
+}
+
+@media (max-width: 576px) {
+  .teaching-meta-grid {
+    flex-direction: column;
+    gap: 0.65rem;
+    border: none;
+    padding: 0;
+  }
+
+  .teaching-meta-card {
+    border: none;
+    padding: 0;
+    margin: 0;
+  }
+}
