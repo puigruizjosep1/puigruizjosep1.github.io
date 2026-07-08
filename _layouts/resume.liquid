@@ -1,14 +1,13 @@
 ---
 layout: default
 ---
-
 {% assign resume = site.data.resume %}
 {% assign work = resume.work %}
 
 {% comment %} Split work entries into main career, parallel engagements, and early/compact roles {% endcomment %}
-{% assign main_work = "" | split: "" %}
-{% assign side_work = "" | split: "" %}
-{% assign early_work = "" | split: "" %}
+{% assign main_work = '' | split: '' %}
+{% assign side_work = '' | split: '' %}
+{% assign early_work = '' | split: '' %}
 {% for job in work %}
   {% if job.parallel %}
     {% assign side_work = side_work | push: job %}
@@ -23,18 +22,22 @@ layout: default
   <header class="post-header page-hero resume-hero">
     <h1 class="post-title">{{ resume.basics.name }}</h1>
     <p class="resume-label">{{ resume.basics.label }}</p>
-    {% if resume.basics.summary and resume.basics.summary != "" %}
-      <p class="resume-summary">{{ resume.basics.summary | markdownify | remove: "<p>" | remove: "</p>" }}</p>
+    {% if resume.basics.summary and resume.basics.summary != '' %}
+      <p class="resume-summary">{{ resume.basics.summary | markdownify | remove: '<p>' | remove: '</p>' }}</p>
     {% endif %}
     <div class="resume-meta">
       {% if resume.basics.location.city %}
-        <span class="resume-meta-item"><i class="fa-solid fa-location-dot"></i> {{ resume.basics.location.city }}, {{ resume.basics.location.region }}</span>
+        <span class="resume-meta-item"
+          ><i class="fa-solid fa-location-dot"></i> {{ resume.basics.location.city }}, {{ resume.basics.location.region -}}
+        </span>
       {% endif %}
-      {% if resume.basics.email and resume.basics.email != "" %}
+      {% if resume.basics.email and resume.basics.email != '' %}
         <a class="resume-meta-item" href="mailto:{{ resume.basics.email }}"><i class="fa-solid fa-envelope"></i> {{ resume.basics.email }}</a>
       {% endif %}
       {% if page.cv_pdf %}
-        <a class="resume-pdf-btn" href="{{ page.cv_pdf | prepend: '/assets/pdf/' | relative_url }}" target="_blank" rel="noopener"><i class="fa-solid fa-download"></i> Download PDF</a>
+        <a class="resume-pdf-btn" href="{{ page.cv_pdf | prepend: '/assets/pdf/' | relative_url }}" target="_blank" rel="noopener"
+          ><i class="fa-solid fa-download"></i> Download PDF</a
+        >
       {% endif %}
     </div>
   </header>
@@ -43,22 +46,22 @@ layout: default
     {% comment %} ============ Main career: one card per company, roles on a promotion track ============ {% endcomment %}
     <h2 class="resume-section-title">Experience</h2>
 
-    {% assign companies = main_work | map: "name" | uniq %}
+    {% assign companies = main_work | map: 'name' | uniq %}
     {% for company in companies %}
-      {% assign roles = main_work | where: "name", company %}
+      {% assign roles = main_work | where: 'name', company %}
       {% assign first_role = roles | first %}
       {% assign last_role = roles | last %}
 
       {% comment %} Tenure span across all roles at this company {% endcomment %}
       {% assign group_start = last_role.startDate %}
-      {% if first_role.endDate == "Ongoing" or first_role.endDate == nil or first_role.endDate == "" %}
-        {% assign group_end_label = "Present" %}
-        {% assign group_end_s = "now" | date: "%s" | plus: 0 %}
+      {% if first_role.endDate == 'Ongoing' or first_role.endDate == null or first_role.endDate == '' %}
+        {% assign group_end_label = 'Present' %}
+        {% assign group_end_s = 'now' | date: '%s' | plus: 0 %}
       {% else %}
-        {% assign group_end_label = first_role.endDate | date: "%Y" %}
-        {% assign group_end_s = first_role.endDate | date: "%s" | plus: 0 %}
+        {% assign group_end_label = first_role.endDate | date: '%Y' %}
+        {% assign group_end_s = first_role.endDate | date: '%s' | plus: 0 %}
       {% endif %}
-      {% assign group_start_s = group_start | date: "%s" | plus: 0 %}
+      {% assign group_start_s = group_start | date: '%s' | plus: 0 %}
       {% assign tenure_years = group_end_s | minus: group_start_s | divided_by: 31557600 %}
 
       <section class="company-card">
@@ -68,9 +71,12 @@ layout: default
             <p class="company-location">{{ first_role.location }}</p>
           </div>
           <div class="company-tenure">
-            <span class="company-dates">{{ group_start | date: "%Y" }} – {{ group_end_label }}</span>
+            <span class="company-dates">{{ group_start | date: '%Y' }} – {{ group_end_label }}</span>
             {% if tenure_years >= 1 %}
-              <span class="company-years">{{ tenure_years }}{% if group_end_label == "Present" %}+{% endif %} yrs{% if roles.size > 1 %} · {{ roles.size }} roles{% endif %}</span>
+              <span class="company-years">
+                {{- tenure_years -}}
+                {%- if group_end_label == 'Present' %}+{% endif %} yrs{% if roles.size > 1 %} · {{ roles.size }} roles{% endif -%}
+              </span>
             {% endif %}
           </div>
         </header>
@@ -80,19 +86,25 @@ layout: default
             <div class="role-node {% if forloop.first and group_end_label == 'Present' %}role-current{% endif %}">
               <div class="role-head">
                 <span class="role-position">{{ role.position }}</span>
-                {% unless forloop.last %}<span class="role-promoted">Promoted</span>{% endunless %}
+                {% unless forloop.last -%}
+                  <span class="role-promoted">Promoted</span>
+                {%- endunless %}
                 <span class="role-dates">
-                  {{ role.startDate | date: "%b %Y" }} –
-                  {% if role.endDate == "Ongoing" or role.endDate == nil or role.endDate == "" %}Present{% else %}{{ role.endDate | date: "%b %Y" }}{% endif %}
+                  {{ role.startDate | date: '%b %Y' }} –
+                  {% if role.endDate == 'Ongoing' or role.endDate == null or role.endDate == '' -%}
+                    Present
+                  {%- else -%}
+                    {{- role.endDate | date: '%b %Y' -}}
+                  {%- endif %}
                 </span>
               </div>
               {% if role.summary %}
-                <p class="role-summary">{{ role.summary | markdownify | remove: "<p>" | remove: "</p>" }}</p>
+                <p class="role-summary">{{ role.summary | markdownify | remove: '<p>' | remove: '</p>' }}</p>
               {% endif %}
               {% if role.highlights and role.highlights.size > 0 %}
                 <ul class="role-highlights">
                   {% for hl in role.highlights %}
-                    <li>{{ hl | markdownify | remove: "<p>" | remove: "</p>" }}</li>
+                    <li>{{ hl | markdownify | remove: '<p>' | remove: '</p>' }}</li>
                   {% endfor %}
                 </ul>
               {% endif %}
@@ -111,23 +123,27 @@ layout: default
           <section class="parallel-card">
             <header class="parallel-head">
               <h3 class="parallel-position">{{ job.position }}</h3>
-              {% if job.endDate == "Ongoing" or job.endDate == nil or job.endDate == "" %}
+              {% if job.endDate == 'Ongoing' or job.endDate == null or job.endDate == '' %}
                 <span class="parallel-badge">Ongoing</span>
               {% endif %}
             </header>
             <p class="parallel-org">{{ job.name }}</p>
             <p class="parallel-dates">
-              {{ job.startDate | date: "%b %Y" }} –
-              {% if job.endDate == "Ongoing" or job.endDate == nil or job.endDate == "" %}Present{% else %}{{ job.endDate | date: "%b %Y" }}{% endif %}
+              {{ job.startDate | date: '%b %Y' }} –
+              {% if job.endDate == 'Ongoing' or job.endDate == null or job.endDate == '' -%}
+                Present
+              {%- else -%}
+                {{- job.endDate | date: '%b %Y' -}}
+              {%- endif %}
               · {{ job.location }}
             </p>
             {% if job.summary %}
-              <p class="parallel-summary">{{ job.summary | markdownify | remove: "<p>" | remove: "</p>" }}</p>
+              <p class="parallel-summary">{{ job.summary | markdownify | remove: '<p>' | remove: '</p>' }}</p>
             {% endif %}
             {% if job.highlights and job.highlights.size > 0 %}
               <ul class="parallel-highlights">
                 {% for hl in job.highlights %}
-                  <li>{{ hl | markdownify | remove: "<p>" | remove: "</p>" }}</li>
+                  <li>{{ hl | markdownify | remove: '<p>' | remove: '</p>' }}</li>
                 {% endfor %}
               </ul>
             {% endif %}
@@ -146,7 +162,7 @@ layout: default
               <span class="early-position">{{ job.position }}</span>
               <span class="early-org">{{ job.name }}</span>
             </div>
-            <span class="early-dates">{{ job.startDate | date: "%b %Y" }} – {{ job.endDate | date: "%b %Y" }}</span>
+            <span class="early-dates">{{ job.startDate | date: '%b %Y' }} – {{ job.endDate | date: '%b %Y' }}</span>
           </div>
         {% endfor %}
       </div>
@@ -159,10 +175,16 @@ layout: default
         {% for edu in resume.education %}
           <div class="early-row">
             <div class="early-main">
-              <span class="early-position">{{ edu.studyType }}{% if edu.area %}, {{ edu.area }}{% endif %}</span>
+              <span class="early-position">
+                {{- edu.studyType -}}
+                {%- if edu.area %}, {{ edu.area }}{% endif -%}
+              </span>
               <span class="early-org">{{ edu.institution }}</span>
             </div>
-            <span class="early-dates">{% if edu.startDate %}{{ edu.startDate | date: "%Y" }} – {% endif %}{{ edu.endDate | date: "%Y" }}</span>
+            <span class="early-dates">
+              {%- if edu.startDate %}{{ edu.startDate | date: '%Y' }} – {% endif -%}
+              {{- edu.endDate | date: '%Y' -}}
+            </span>
           </div>
         {% endfor %}
       </div>
@@ -174,7 +196,10 @@ layout: default
       <div class="skills-grid">
         {% for skill in resume.skills %}
           <div class="skill-group">
-            <p class="skill-name">{% if skill.icon %}<i class="{{ skill.icon }}"></i> {% endif %}{{ skill.name }}</p>
+            <p class="skill-name">
+              {% if skill.icon %}<i class="{{ skill.icon }}"></i> {% endif -%}
+              {{- skill.name }}
+            </p>
             <div class="skill-chips">
               {% for kw in skill.keywords %}
                 <span class="resume-chip">{{ kw }}</span>
@@ -195,7 +220,7 @@ layout: default
               <span class="early-position">{{ award.title }}</span>
               <span class="early-org">{{ award.awarder }}</span>
             </div>
-            <span class="early-dates">{{ award.date | date: "%Y" }}</span>
+            <span class="early-dates">{{ award.date | date: '%Y' }}</span>
           </div>
         {% endfor %}
       </div>
@@ -210,7 +235,7 @@ layout: default
               <span class="early-position">{{ cert.name }}</span>
               <span class="early-org">{{ cert.issuer }}</span>
             </div>
-            <span class="early-dates">{{ cert.date | date: "%Y" }}</span>
+            <span class="early-dates">{{ cert.date | date: '%Y' }}</span>
           </div>
         {% endfor %}
       </div>
