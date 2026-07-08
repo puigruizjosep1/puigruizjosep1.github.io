@@ -55,8 +55,25 @@ ninja.data = [{
             window.location.href = "/blog/2026/NVIDIA-GTC/";
           
         },
-      },{id: "news-personal-website-goes-live",
+      },{id: "post-wrapping-up-aws-re-invent-2021",
+        
+          title: "Wrapping up AWS re:Invent 2021!",
+        
+        description: "My recap of AWS re:Invent 2021 in Las Vegas — Nasdaq&#39;s cloud partnership announcement and the week&#39;s ML/AI highlights",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2021/aws-reinvent/";
+          
+        },
+      },{id: "news-attended-aws-re-invent-2021-in-las-vegas-where-nasdaq-announced-its-cloud-partnership-with-aws-my-recap",
+          title: 'Attended AWS re:Invent 2021 in Las Vegas, where Nasdaq announced its cloud partnership...',
+          description: "",
+          section: "News",},{id: "news-personal-website-goes-live",
           title: 'Personal website goes live!',
+          description: "",
+          section: "News",},{id: "news-joined-imagination-in-action-at-mit-as-a-panelist-april-9-10-2026-more-details-in-engagements",
+          title: 'Joined Imagination in Action at MIT as a panelist, April 9–10, 2026. More...',
           description: "",
           section: "News",},{
         id: 'social-email',
