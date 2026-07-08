@@ -4,24 +4,45 @@ const ninja = document.querySelector('ninja-keys');
 // add the home and posts menu items
 ninja.data = [{
     id: "nav-about",
-    title: "about",
+    title: "About",
     section: "Navigation",
     handler: () => {
       window.location.href = "/";
     },
-  },{id: "nav-blog",
-          title: "blog",
+  },{id: "nav-resume",
+          title: "Resume",
+          description: "Resume for Josep Puig Ruiz",
+          section: "Navigation",
+          handler: () => {
+            window.location.href = "/resume/";
+          },
+        },{id: "nav-blog",
+          title: "Blog",
           description: "",
           section: "Navigation",
           handler: () => {
             window.location.href = "/blog/";
           },
-        },{id: "nav-resume",
-          title: "resume",
-          description: "Resume for Josep Puig Ruiz",
+        },{id: "nav-teaching",
+          title: "Teaching",
+          description: "Courses, workshops, and guest lectures",
           section: "Navigation",
           handler: () => {
-            window.location.href = "/resume/";
+            window.location.href = "/teaching/";
+          },
+        },{id: "nav-service",
+          title: "Service",
+          description: "Mentorship, community involvement, and professional service",
+          section: "Navigation",
+          handler: () => {
+            window.location.href = "/service/";
+          },
+        },{id: "nav-engagements",
+          title: "Engagements",
+          description: "Invited speaking, conferences, and media",
+          section: "Navigation",
+          handler: () => {
+            window.location.href = "/engagements/";
           },
         },{id: "post-take-aways-from-nvidia-gtc-2026",
         
