@@ -34,7 +34,10 @@
       "startDate": "2026-01-01",
       "endDate": "Ongoing",
       "summary": "Main instructor for **graduate-level special topics** focusing on the intersection of Data Science, Machine Learning, and Financial Markets.",
-      "highlights": ["**TML-0193-08**: Special Topics: Data & Machine Learning for Financial Markets"]
+      "highlights": [
+        "**TML-0193-08**: Special Topics: Data & Machine Learning for Financial Markets"
+      ],
+      "parallel": true
     },
     {
       "name": "Johns Hopkins University, Center for Leadership Education",
@@ -46,7 +49,8 @@
       "highlights": [
         "Advising on **curriculum evolution and research initiatives** to meet rapid industry advancements",
         "Orchestrating collaborative strategies between **JHU and industrial partners** to enhance student career development"
-      ]
+      ],
+      "parallel": true
     },
     {
       "name": "The NASDAQ Stock Exchange",
@@ -82,7 +86,10 @@
       "startDate": "2019-05-01",
       "endDate": "2019-08-01",
       "summary": "Performed competitive and market intelligence research analysis by effectively using source intelligence (OSINT) and Machine Learning techniques to provide insights, direction and coaching on how to position most effectively.",
-      "highlights": ["Provided market and competitive actionable intelligence-based deliverables to support the company’s AI strategy."]
+      "highlights": [
+        "Provided market and competitive actionable intelligence-based deliverables to support the company’s AI strategy."
+      ],
+      "compact": true
     },
     {
       "name": "French Space Agency (CNES)",
@@ -94,7 +101,8 @@
       "highlights": [
         "Improved initial trajectory accuracy by **23%** and reduced mission costs by approximately **15%** on average",
         "Documented, tested, and performed analysis benchmarks for algorithm robustness and reliability"
-      ]
+      ],
+      "compact": true
     }
   ],
   "volunteer": [],
@@ -107,13 +115,25 @@
       "name": "Data Science & Machine Learning",
       "level": "Expert",
       "icon": "fa-solid fa-hashtag",
-      "keywords": ["Machine Learning", "Deep Learning", "Statistical Modeling", "Python", "Data Analysis", "MLOps"]
+      "keywords": [
+        "Machine Learning",
+        "Deep Learning",
+        "Statistical Modeling",
+        "Python",
+        "Data Analysis",
+        "MLOps"
+      ]
     },
     {
       "name": "Financial Technology",
       "level": "Expert",
       "icon": "fa-solid fa-chart-line",
-      "keywords": ["Fintech", "Quantitative Analysis", "Market Intelligence", "Risk Analytics"]
+      "keywords": [
+        "Fintech",
+        "Quantitative Analysis",
+        "Market Intelligence",
+        "Risk Analytics"
+      ]
     }
   ],
   "languages": [],

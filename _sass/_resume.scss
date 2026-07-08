@@ -1,0 +1,410 @@
+/*******************************************************************************
+ * Resume page: grouped company timeline with promotion track, parallel
+ * engagement cards, compact early-experience rows, and skill chips.
+ ******************************************************************************/
+
+.resume-page {
+  .post-header.page-hero {
+    border-bottom: none;
+    padding-bottom: 0;
+    margin-bottom: 1.4rem;
+  }
+
+  .resume-label {
+    margin: 0.2rem 0 0;
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: var(--global-theme-color);
+  }
+
+  .resume-summary {
+    margin: 0.55rem 0 0;
+    font-size: 0.98rem;
+    line-height: 1.6;
+    color: var(--global-text-color-light);
+    max-width: 46rem;
+  }
+
+  .resume-meta {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.5rem 1.1rem;
+    margin-top: 0.9rem;
+    padding-bottom: 1.1rem;
+    border-bottom: 1px solid var(--global-divider-color);
+    font-size: 0.88rem;
+  }
+
+  .resume-meta-item {
+    color: var(--global-text-color-light);
+    text-decoration: none;
+
+    i {
+      color: var(--global-theme-color);
+      margin-right: 0.25rem;
+    }
+  }
+
+  .resume-pdf-btn {
+    display: inline-block;
+    padding: 0.28rem 0.7rem;
+    border-radius: 999px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--global-theme-color);
+    border: 1px solid color-mix(in srgb, var(--global-theme-color) 32%, transparent);
+    background-color: color-mix(in srgb, var(--global-theme-color) 10%, transparent);
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: none;
+      border-color: var(--global-theme-color);
+    }
+  }
+
+  .resume-section-title {
+    margin: 2rem 0 0.75rem;
+    padding-bottom: 0.3rem;
+    font-size: 1.08rem;
+    font-weight: 700;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    border-bottom: 1px solid var(--global-divider-color);
+  }
+
+  .resume-section-note {
+    margin: -0.2rem 0 1rem;
+    font-size: 0.88rem;
+    font-style: italic;
+    color: var(--global-text-color-light);
+  }
+
+  /* ---- Company card + promotion track ---- */
+
+  .company-card {
+    margin-bottom: 1.4rem;
+    padding: 1.15rem 1.35rem;
+    border: 1px solid var(--global-divider-color);
+    border-radius: 0.75rem;
+    background-color: var(--global-card-bg-color);
+    box-shadow: 0 1px 0 rgba(0, 0, 0, 0.03);
+  }
+
+  .company-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 0.5rem 1rem;
+    flex-wrap: wrap;
+    margin-bottom: 1rem;
+  }
+
+  .company-name {
+    margin: 0;
+    font-size: 1.12rem;
+    font-weight: 700;
+  }
+
+  .company-location {
+    margin: 0.1rem 0 0;
+    font-size: 0.82rem;
+    color: var(--global-text-color-light);
+  }
+
+  .company-tenure {
+    text-align: right;
+  }
+
+  .company-dates {
+    display: block;
+    font-size: 0.9rem;
+    font-weight: 600;
+    font-variant-numeric: tabular-nums;
+  }
+
+  .company-years {
+    display: block;
+    margin-top: 0.1rem;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--global-theme-color);
+  }
+
+  .role-track {
+    position: relative;
+    padding-left: 1.35rem;
+
+    /* Vertical spine connecting the role dots */
+    &::before {
+      content: "";
+      position: absolute;
+      left: 0.32rem;
+      top: 0.5rem;
+      bottom: 0.6rem;
+      width: 2px;
+      background-color: color-mix(in srgb, var(--global-theme-color) 30%, transparent);
+    }
+  }
+
+  .role-node {
+    position: relative;
+    padding-bottom: 1.1rem;
+
+    &:last-child {
+      padding-bottom: 0.1rem;
+    }
+
+    /* Dot marker on the spine */
+    &::before {
+      content: "";
+      position: absolute;
+      left: -1.35rem;
+      top: 0.42rem;
+      width: 0.7rem;
+      height: 0.7rem;
+      border-radius: 50%;
+      border: 2px solid var(--global-theme-color);
+      background-color: var(--global-card-bg-color);
+    }
+
+    &.role-current::before {
+      background-color: var(--global-theme-color);
+      box-shadow: 0 0 0 3px color-mix(in srgb, var(--global-theme-color) 20%, transparent);
+    }
+  }
+
+  .role-head {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 0.3rem 0.6rem;
+  }
+
+  .role-position {
+    font-size: 0.98rem;
+    font-weight: 700;
+  }
+
+  .role-promoted {
+    display: inline-block;
+    padding: 0.08rem 0.5rem;
+    border-radius: 999px;
+    font-size: 0.66rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.07em;
+    color: var(--global-theme-color);
+    border: 1px solid color-mix(in srgb, var(--global-theme-color) 30%, transparent);
+    background-color: color-mix(in srgb, var(--global-theme-color) 8%, transparent);
+  }
+
+  .role-dates {
+    margin-left: auto;
+    font-size: 0.8rem;
+    color: var(--global-text-color-light);
+    font-variant-numeric: tabular-nums;
+    white-space: nowrap;
+  }
+
+  .role-summary {
+    margin: 0.35rem 0 0;
+    font-size: 0.9rem;
+    line-height: 1.55;
+    color: var(--global-text-color-light);
+  }
+
+  .role-highlights {
+    margin: 0.45rem 0 0;
+    padding-left: 1.1rem;
+
+    li {
+      margin-bottom: 0.3rem;
+      font-size: 0.88rem;
+      line-height: 1.5;
+    }
+  }
+
+  /* ---- Parallel engagements ---- */
+
+  .parallel-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1rem;
+  }
+
+  .parallel-card {
+    padding: 1rem 1.15rem;
+    border: 1px solid var(--global-divider-color);
+    border-left: 3px solid var(--global-theme-color);
+    border-radius: 0.75rem;
+    background-color: var(--global-card-bg-color);
+  }
+
+  .parallel-head {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 0.5rem;
+  }
+
+  .parallel-position {
+    margin: 0;
+    font-size: 0.95rem;
+    font-weight: 700;
+  }
+
+  .parallel-badge {
+    flex-shrink: 0;
+    display: inline-block;
+    padding: 0.08rem 0.5rem;
+    border-radius: 999px;
+    font-size: 0.66rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.07em;
+    color: var(--global-theme-color);
+    border: 1px solid color-mix(in srgb, var(--global-theme-color) 30%, transparent);
+    background-color: color-mix(in srgb, var(--global-theme-color) 8%, transparent);
+  }
+
+  .parallel-org {
+    margin: 0.15rem 0 0;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--global-theme-color);
+  }
+
+  .parallel-dates {
+    margin: 0.1rem 0 0;
+    font-size: 0.76rem;
+    color: var(--global-text-color-light);
+    font-variant-numeric: tabular-nums;
+  }
+
+  .parallel-summary {
+    margin: 0.5rem 0 0;
+    font-size: 0.85rem;
+    line-height: 1.55;
+    color: var(--global-text-color-light);
+  }
+
+  .parallel-highlights {
+    margin: 0.45rem 0 0;
+    padding-left: 1.1rem;
+
+    li {
+      margin-bottom: 0.25rem;
+      font-size: 0.82rem;
+      line-height: 1.5;
+    }
+  }
+
+  /* ---- Early experience / education / awards rows ---- */
+
+  .early-list {
+    border: 1px solid var(--global-divider-color);
+    border-radius: 0.75rem;
+    background-color: var(--global-card-bg-color);
+    padding: 0.35rem 1.15rem;
+  }
+
+  .early-row {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 0.2rem 1rem;
+    padding: 0.6rem 0;
+    border-bottom: 1px solid var(--global-divider-color);
+
+    &:last-child {
+      border-bottom: none;
+    }
+  }
+
+  .early-position {
+    font-size: 0.92rem;
+    font-weight: 600;
+  }
+
+  .early-org {
+    margin-left: 0.5rem;
+    font-size: 0.85rem;
+    color: var(--global-text-color-light);
+
+    &::before {
+      content: "· ";
+    }
+  }
+
+  .early-dates {
+    font-size: 0.8rem;
+    color: var(--global-text-color-light);
+    font-variant-numeric: tabular-nums;
+    white-space: nowrap;
+  }
+
+  /* ---- Skills ---- */
+
+  .skills-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1rem;
+  }
+
+  .skill-group {
+    padding: 1rem 1.15rem;
+    border: 1px solid var(--global-divider-color);
+    border-radius: 0.75rem;
+    background-color: var(--global-card-bg-color);
+  }
+
+  .skill-name {
+    margin: 0 0 0.55rem;
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+
+    i {
+      color: var(--global-theme-color);
+      margin-right: 0.3rem;
+    }
+  }
+
+  .skill-chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+  }
+
+  .resume-chip {
+    display: inline-block;
+    padding: 0.2rem 0.55rem;
+    border-radius: 999px;
+    font-size: 0.76rem;
+    font-weight: 600;
+    color: var(--global-theme-color);
+    border: 1px solid color-mix(in srgb, var(--global-theme-color) 32%, transparent);
+    background-color: color-mix(in srgb, var(--global-theme-color) 10%, transparent);
+  }
+
+  @media (max-width: 768px) {
+    .parallel-grid,
+    .skills-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .company-tenure {
+      text-align: left;
+    }
+
+    .role-dates {
+      margin-left: 0;
+      width: 100%;
+    }
+  }
+}
